@@ -8,10 +8,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.Assert.assertTrue;
 
 public class AppTest {
+
     @Test
     public void testGoogleTitle() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // runs without opening browser
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
@@ -23,3 +25,4 @@ public class AppTest {
         assertTrue(title.contains("Google"));
     }
 }
+
